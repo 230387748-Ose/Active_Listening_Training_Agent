@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.chl.charlibv2urp": {
+      "version": "file:C:/Users/osose/Downloads/anim/com.chl.charlibv2urp-v1.0.2.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {
+        "com.soupday.cc3_unity_tools": "1.6.2",
+        "com.unity.render-pipelines.universal": "1.6.2"
+      }
+    },
     "com.microsoft.adaptivecards.net": {
       "version": "file:MixedReality/com.microsoft.adaptivecards.net-2.7.3.tgz",
       "depth": 0,
@@ -82,6 +91,14 @@
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {}
+    },
+    "com.soupday.cc3_unity_tools": {
+      "version": "file:C:/Users/osose/Downloads/2020_3/cc_unity_tools_URP-1.6.2.URP10",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "10.5.0"
+      }
     },
     "com.unity.collab-proxy": {
       "version": "1.17.2",

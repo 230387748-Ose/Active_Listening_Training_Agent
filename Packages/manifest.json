@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.chl.charlibv2urp": "file:C:/Users/osose/Downloads/anim/com.chl.charlibv2urp-v1.0.2.tgz",
     "com.microsoft.adaptivecards.net": "file:MixedReality/com.microsoft.adaptivecards.net-2.7.3.tgz",
     "com.microsoft.altspacevr_uploader": "file:MixedReality/com.microsoft.altspacevr_uploader-2.2.29.tgz",
     "com.microsoft.mixedreality.input": "file:MixedReality/com.microsoft.mixedreality.input-0.9.2006.tgz",
@@ -10,6 +11,7 @@
     "com.microsoft.mixedreality.toolkit.standardassets": "file:MixedReality/com.microsoft.mixedreality.toolkit.standardassets-2.8.3.tgz",
     "com.microsoft.mixedreality.toolkit.tools": "file:MixedReality/com.microsoft.mixedreality.toolkit.tools-2.8.3.tgz",
     "com.microsoft.spatialaudio.spatializer.unity": "file:MixedReality/com.microsoft.spatialaudio.spatializer.unity-2.0.47.tgz",
+    "com.soupday.cc3_unity_tools": "file:C:/Users/osose/Downloads/2020_3/cc_unity_tools_URP-1.6.2.URP10",
     "com.unity.collab-proxy": "1.17.2",
     "com.unity.ide.rider": "2.0.7",
     "com.unity.ide.visualstudio": "2.0.16",
