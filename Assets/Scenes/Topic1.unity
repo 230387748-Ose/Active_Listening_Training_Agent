@@ -502,7 +502,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1538436577}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+        m_TargetAssemblyTypeName: PageController, Assembly-CSharp
         m_MethodName: ButtonHandlerPlay
         m_Mode: 1
         m_Arguments:
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538436572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b9f57dab959d53479fa05c799db8c17, type: 3}
+  m_Script: {fileID: 11500000, guid: 176c3c6fec78f4840b2357e2d010e87f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1538436578
