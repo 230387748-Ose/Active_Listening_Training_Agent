@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Game2Timer : MonoBehaviour
 {
-     public Text TimerText;  // UI Text component to display the timer
+ public Text TimerText;  // UI Text component to display the timer
     private float timeRemaining = 305f;  // Starting time in seconds
 
     void Start()
@@ -25,8 +25,8 @@ public class Game2Timer : MonoBehaviour
             UpdateTimerText();  // Update the UI text
         }
 
-        // When the countdown is finished, load the next scene
-        LoadNextScene();
+        // When the countdown is finished, load the menu scene
+        LoadMenuScene();
     }
 
     // Update the TimerText UI element
@@ -39,13 +39,10 @@ public class Game2Timer : MonoBehaviour
         TimerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    // Load the next scene when the timer ends
-    private void LoadNextScene()
+    // Load the menu scene when the timer ends
+    private void LoadMenuScene()
     {
-        // Assuming the next scene is indexed after the current one
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-
-        // Load the next scene
-        SceneManager.LoadScene(nextSceneIndex);
+        // Load the "Menu" scene by name
+        SceneManager.LoadScene("Menu");
     }
 }
