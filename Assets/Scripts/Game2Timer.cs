@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Game2Timer : MonoBehaviour
 {
  public Text TimerText;  // UI Text component to display the timer
-    private float timeRemaining = 305f;  // Starting time in seconds
+    private float timeRemaining = 300f;  // Starting time in seconds
 
     void Start()
     {
