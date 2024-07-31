@@ -75,7 +75,7 @@ public class EyeTrackingLogger : MonoBehaviour
 
     void LogGazeData()
     {
-        string gazeStatus = isGazingAtCharacter ? "Gazing at character's upper body" : "Not gazing at character";
+        string gazeStatus = isGazingAtCharacter ? "Gazing at character's face" : "Not gazing at character";
         Debug.Log($"Time: {Time.time}, Gaze Status: {gazeStatus}");
     }
 
