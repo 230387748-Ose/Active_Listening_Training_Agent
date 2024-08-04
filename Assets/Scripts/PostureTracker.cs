@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Input;
+using UnityEngine.SceneManagement;
 
 public class PostureTracker : MonoBehaviour
 {
- public float checkInterval = 5f; // Time between checks in seconds
+    public float checkInterval = 5f; // Time between checks in seconds
     private float nextCheckTime = 0f;
 
     private IMixedRealityEyeGazeProvider eyeGazeProvider;
@@ -16,6 +17,8 @@ public class PostureTracker : MonoBehaviour
     public float standingDistanceThreshold = 0.5f; // Threshold for distance indicating standing
     public float sittingDistanceThreshold = 1.2f; // Threshold for distance indicating sitting
     public float leaningAngleThreshold = 30f; // Angle threshold for leaning
+
+    private bool isTracking = true; // Flag to control whether tracking is active
 
     void Start()
     {
@@ -28,10 +31,15 @@ public class PostureTracker : MonoBehaviour
 
         // Track the user's head transform
         userHeadTransform = Camera.main.transform;
+
+        // Register the sceneLoaded event to handle scene changes
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Update()
     {
+        if (!isTracking) return;
+
         if (Time.time >= nextCheckTime)
         {
             nextCheckTime = Time.time + checkInterval;
@@ -77,5 +85,20 @@ public class PostureTracker : MonoBehaviour
         {
             Debug.Log("Slouching");
         }
+    }
+
+    // Handle scene changes
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Disable tracking when a new scene is loaded
+        isTracking = false;
+        Debug.Log("Scene changed. Posture tracking stopped.");
+    }
+
+    // Clean up when the script is destroyed
+    private void OnDestroy()
+    {
+        // Unregister the sceneLoaded event to avoid potential memory leaks
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
