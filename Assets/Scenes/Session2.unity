@@ -412,10 +412,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 394852563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b264838bb2145924d89fb014ba7f385c, type: 3}
+  m_Script: {fileID: 11500000, guid: c5dfe5b50f6ad2647b75e72fa836257c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterUpperBody: {fileID: 394852563}
+  headObject: {fileID: 394852563}
+  bodyObject: {fileID: 1991436965}
   recordInterval: 5
 --- !u!136 &394852565
 CapsuleCollider:
@@ -428,9 +429,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.09475124
-  m_Height: 0.5150504
+  m_Height: 0.33983278
   m_Direction: 1
-  m_Center: {x: -0.0015383657, y: 1.5720732, z: -0.05105485}
+  m_Center: {x: -0.0015383657, y: 1.659682, z: -0.05105485}
 --- !u!1 &595026718
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,9 +571,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6807511465447805429, guid: d33532394ba1da04995b20008645ea78, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d33532394ba1da04995b20008645ea78, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2844691227469209326, guid: d33532394ba1da04995b20008645ea78, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d33532394ba1da04995b20008645ea78, type: 3}
@@ -1113,3 +1122,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1991436965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2844691227469209326, guid: d33532394ba1da04995b20008645ea78, type: 3}
+  m_PrefabInstance: {fileID: 1225133505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1991436968
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991436965}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5762254897094679817, guid: d33532394ba1da04995b20008645ea78, type: 3}
