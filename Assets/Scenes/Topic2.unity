@@ -313,10 +313,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
-  m_Text: 'Human Space Exploration.
-
-
-    Duration : 5mins'
+  m_Text: "My first time at universal studios \n\nDuration : 5mins"
 --- !u!222 &702247610
 CanvasRenderer:
   m_ObjectHideFlags: 0
