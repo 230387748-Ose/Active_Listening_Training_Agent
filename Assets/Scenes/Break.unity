@@ -511,7 +511,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1538436577}
-        m_TargetAssemblyTypeName: PageController, Assembly-CSharp
+        m_TargetAssemblyTypeName: NextPageController, Assembly-CSharp
         m_MethodName: ButtonHandlerPlay
         m_Mode: 1
         m_Arguments:
@@ -903,9 +903,9 @@ GameObject:
   - component: {fileID: 1538436575}
   - component: {fileID: 1538436574}
   - component: {fileID: 1538436573}
-  - component: {fileID: 1538436577}
   - component: {fileID: 1538436579}
   - component: {fileID: 1538436578}
+  - component: {fileID: 1538436577}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1006,7 +1006,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538436572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176c3c6fec78f4840b2357e2d010e87f, type: 3}
+  m_Script: {fileID: 11500000, guid: 779af2b8341289746852c85a42feb6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1538436578
