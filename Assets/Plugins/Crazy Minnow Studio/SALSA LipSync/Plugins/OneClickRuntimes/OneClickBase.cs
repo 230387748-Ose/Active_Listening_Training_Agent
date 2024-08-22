@@ -9,12 +9,6 @@ namespace CrazyMinnow.SALSA.OneClicks
 	{
 		/// <summary>
 		/// RELEASE NOTES:
-		///		2.7.1:
-		///			+ Better support for custom AudioSource settings: will not create AudioSource
-		///				automagically when an AudioClip is not passed to Base. It assumes an AudioSource
-		///				is not required. This is for backward compatibility with existing official OneClicks.
-		///		2.7.0:
-		///			+ EmoteR parameters repeater delay/startType, persistence.
 		///		2.6.0.0:
 		///			+ Added optional parameter to AddShapeComponent for specific SMR selection.
 		/// 	2.5.0.2:
@@ -217,24 +211,10 @@ namespace CrazyMinnow.SALSA.OneClicks
 				                                      OneClickComponent.ComponentType.Bone));
 		}
 
-		protected static void AddEmoteFlags(bool isRandom, 
-		                                    bool isEmph, 
-		                                    bool isRepeater, 
-		                                    float frac = 1.0f,
-		                                    bool isAlwaysEmph = false, 
-		                                    bool isPersistent = false,
-		                                    float repeaterDelay = 0.0f, 
-		                                    EmoteRepeater.StartDelay repeaterStartType = EmoteRepeater.StartDelay.Immediately)
+		protected static void AddEmoteFlags(bool isRandom, bool isEmph, bool isRepeater, float frac = 1.0f, bool isAlwaysEmph = false)
 		{
 			var currentExpression = (OneClickEmoterExpression)currentConfiguration.oneClickExpressions[currentConfiguration.oneClickExpressions.Count - 1];
-			currentExpression.SetEmoterBools(isRandom, 
-			                                 isEmph, 
-			                                 isRepeater, 
-			                                 frac, 
-			                                 isAlwaysEmph, 
-			                                 repeaterDelay, 
-			                                 repeaterStartType,
-			                                 isPersistent);
+			currentExpression.SetEmoterBools(isRandom, isEmph, isRepeater, frac, isAlwaysEmph);
 		}
 
 		protected static void DoOneClickiness(GameObject go, AudioClip clip)
@@ -342,34 +322,20 @@ namespace CrazyMinnow.SALSA.OneClicks
 
 		private static void ConfigureSalsaSettings(AudioClip clip, QueueProcessor qp)
 		{
-			bool useAudioSource = false;
-			
-			if (clip)
-				useAudioSource = true;
-
 			salsa = selectedObject.GetComponent<Salsa>();
 			if (salsa == null)
 				salsa = selectedObject.AddComponent<Salsa>();
 
-			if (useAudioSource)
-			{
-				// configure AudioSource for demonstration
-				var audSrc = selectedObject.GetComponent<AudioSource>();
-				if (audSrc == null && useAudioSource)
-					audSrc = selectedObject.AddComponent<AudioSource>();
-				audSrc.playOnAwake = true;
-				audSrc.loop = false;
-				if (clip != null && audSrc.clip == null)
-					audSrc.clip = clip;
-				salsa.audioSrc = audSrc;
-			}
-			else
-			{
-				Debug.Log("Per the applied OneClick, an AudioSource is not used, SALSA has been set to use External Analysis."+
-				          "\nSALSA may require further configuration for proper operation -- ensure SALSA is receiving ExternalAnalysis.");
-				salsa.useExternalAnalysis = true;
-			}
-			
+			// configure AudioSource for demonstration
+			var audSrc = selectedObject.GetComponent<AudioSource>();
+			if (audSrc == null)
+				audSrc = selectedObject.AddComponent<AudioSource>();
+			audSrc.playOnAwake = true;
+			audSrc.loop = false;
+			if (clip != null && audSrc.clip == null)
+				audSrc.clip = clip;
+			salsa.audioSrc = audSrc;
+
 			salsa.queueProcessor = qp;
 
 			// adjust salsa settings
@@ -593,10 +559,7 @@ namespace CrazyMinnow.SALSA.OneClicks
 					emote.isLipsyncEmphasisEmote = oneClickEmoterExpression.isEmphasis;
 					emote.isAlwaysEmphasisEmote = oneClickEmoterExpression.isAlwaysEmphasis;
 					emote.isRepeaterEmote = oneClickEmoterExpression.isRepeater;
-					emote.repeaterDelay = oneClickEmoterExpression.repeaterDelay;
-					emote.startDelay = oneClickEmoterExpression.startDelayType;
 					emote.frac = oneClickEmoterExpression.expressionDynamics;
-					emote.isPersistent = oneClickEmoterExpression.isPersistent;
 					expressionData = emote.expData;
 					break;
 
