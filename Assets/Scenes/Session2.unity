@@ -1257,6 +1257,8 @@ GameObject:
   - component: {fileID: 5866666020684869712}
   - component: {fileID: 394852565}
   - component: {fileID: 394852564}
+  - component: {fileID: 919132148232564882}
+  - component: {fileID: 919132148232564881}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1264,6 +1266,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &919132148232564881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148232564880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a881bc2e97de4e41a1218333ddd016d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  faceController: {fileID: 919132148232564882}
+--- !u!114 &919132148232564882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148232564880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1397ed77d6cd1d248b2b0a605f4ddadc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FaceMeshName: CC_Base_Body
+  mappingFile: AU2BS-CC3+.json
+  weightFile: male_faces.json
 --- !u!4 &924313093854445948
 Transform:
   m_ObjectHideFlags: 0
