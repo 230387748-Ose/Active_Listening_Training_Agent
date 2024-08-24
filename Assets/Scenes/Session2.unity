@@ -1259,6 +1259,7 @@ GameObject:
   - component: {fileID: 394852564}
   - component: {fileID: 919132148232564882}
   - component: {fileID: 919132148232564881}
+  - component: {fileID: 919132148232564883}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1294,6 +1295,19 @@ MonoBehaviour:
   FaceMeshName: CC_Base_Body
   mappingFile: AU2BS-CC3+.json
   weightFile: male_faces.json
+--- !u!114 &919132148232564883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148232564880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ee086f3d7e3dc4d8d4262d86c7c110, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 1438296007}
 --- !u!4 &924313093854445948
 Transform:
   m_ObjectHideFlags: 0
@@ -3385,7 +3399,7 @@ Animator:
   m_GameObject: {fileID: 919132148232564880}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d33532394ba1da04995b20008645ea78, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a92753d14b8b4442a56cd0892bdbb20, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
