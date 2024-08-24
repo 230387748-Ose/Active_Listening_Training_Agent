@@ -11050,7 +11050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124fd72e6316b7742856540819053212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  faceController: {fileID: 0}
+  faceController: {fileID: 5277312465423724278}
 --- !u!114 &5277312465423724278
 MonoBehaviour:
   m_ObjectHideFlags: 0
