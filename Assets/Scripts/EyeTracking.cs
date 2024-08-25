@@ -6,13 +6,19 @@ using Microsoft.MixedReality.Toolkit;
 
 public class EyeTracking : MonoBehaviour
 {
-public GameObject headObject;  // GameObject with CapsuleCollider for the head
+     public GameObject headObject;  // GameObject with CapsuleCollider for the head
     public GameObject bodyObject;  // GameObject with MeshCollider for the body
     public float recordInterval = 5.0f; // Time interval in seconds for recording data
 
     private IMixedRealityEyeGazeProvider eyeGazeProvider;
     private string gazeStatus = "Not looking at character"; // Default gaze status
     private Coroutine recordCoroutine;
+
+    // Public property to access the gazeStatus variable
+    public string GazeStatus 
+    {
+        get { return gazeStatus; }
+    }
 
     void Start()
     {
