@@ -2990,7 +2990,16 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'CC_Base_R_Foot'\n\tTransform 'CC_Base_R_Calf'\n\tTransform
+    'CC_Base_L_Mid3'\n\tTransform 'CC_Base_NeckTwist01'\n\tTransform 'CC_Base_R_Index2'\n\tTransform
+    'CC_Base_L_Index2'\n\tTransform 'CC_Base_BoneRoot'\n\tTransform 'CC_Base_L_Hand'\n\tTransform
+    'CC_Base_L_Pinky2'\n\tTransform 'CC_Base_R_Pinky2'\n\tand more ...\n\tFrom animation
+    clip '0_T-Pose'\n\tFrom animation clip 'Breathe_1'\n\tFrom animation clip 'Breathe_2'\n\tFrom
+    animation clip 'Idle01_M'\n\tFrom animation clip 'Idle02_M'\n\tFrom animation
+    clip 'Idle03_M'\n\tFrom animation clip 'Idle_01_N'\n\tFrom animation clip 'Male
+    idle'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -11108,6 +11117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 1599809832}
+  lookAtUserWeight: 1
+  lookAtGazeWeight: 0.5
 --- !u!4 &5286421991338417567
 Transform:
   m_ObjectHideFlags: 0
