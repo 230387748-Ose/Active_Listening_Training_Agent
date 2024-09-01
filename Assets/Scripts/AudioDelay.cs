@@ -6,7 +6,7 @@ using CrazyMinnow.SALSA; // Ensure this is the correct namespace for SALSA
 public class AudioDelay : MonoBehaviour
 {
     public AudioSource audioSource;  // Assign the AudioSource in the Inspector
-    public float delay = 2.0f;  // Time in seconds to delay the audio
+    public float delay = 4.0f;  // Time in seconds to delay the audio
 
     void Start()
     {

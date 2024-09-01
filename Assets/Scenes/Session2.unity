@@ -1324,6 +1324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5866666020684869712}
+  salsa: {fileID: 8304175213891681147}
 --- !u!4 &924313093854445948
 Transform:
   m_ObjectHideFlags: 0
@@ -4461,6 +4462,7 @@ GameObject:
   - component: {fileID: 8304175213891681146}
   - component: {fileID: 8304175213891681145}
   - component: {fileID: 8304175213891681144}
+  - component: {fileID: 8304175213891681149}
   m_Layer: 0
   m_Name: CC_Base_Body
   m_TagString: Untagged
@@ -6149,8 +6151,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 99018961783cffc4bba7990f6ee1dcc2, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 5cda1af3d054bc142a80ee33ec96e60d, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -7385,6 +7387,20 @@ MonoBehaviour:
   inspShowLids: 1
   inspShowLipsync: 1
   inspShowBlinks: 1
+--- !u!114 &8304175213891681149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304175213891681143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1615520e1ddb6204eb773a72c8fe4cc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 8304175213891681146}
+  delay: 4
 --- !u!4 &8359091464769551346
 Transform:
   m_ObjectHideFlags: 0
