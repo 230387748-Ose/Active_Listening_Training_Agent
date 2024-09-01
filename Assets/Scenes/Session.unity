@@ -4069,6 +4069,7 @@ GameObject:
   - component: {fileID: 5575875669602306006}
   - component: {fileID: 4212122906921782702}
   - component: {fileID: 3626925275037586993}
+  - component: {fileID: 3626925275037586994}
   m_Layer: 0
   m_Name: F_EBT_Long_Sleeves_H
   m_TagString: Untagged
@@ -4085,11 +4086,24 @@ MeshCollider:
   m_GameObject: {fileID: 3626925275037586992}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2785632687983166647, guid: 2293a73bf0240224fb1e13f4216b7971, type: 3}
+--- !u!65 &3626925275037586994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626925275037586992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.53825873, y: 0.34742978, z: 0.64000964}
+  m_Center: {x: 0.008587198, y: 0.03362788, z: 1.2489269}
 --- !u!1 &3644308640064223654
 GameObject:
   m_ObjectHideFlags: 0
