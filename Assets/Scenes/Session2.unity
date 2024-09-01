@@ -419,9 +419,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.09475124
-  m_Height: 0.33983278
+  m_Height: 0.31012106
   m_Direction: 1
-  m_Center: {x: -0.0015383657, y: 1.659682, z: -0.05105485}
+  m_Center: {x: -0.0015383657, y: 1.6745379, z: -0.05105485}
 --- !u!1 &595026718
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,7 +929,7 @@ MeshCollider:
   m_GameObject: {fileID: 2844691226278417199}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -2331,6 +2331,7 @@ GameObject:
   - component: {fileID: 7259525141794816765}
   - component: {fileID: 2612156829015089370}
   - component: {fileID: 1991436968}
+  - component: {fileID: 2844691226278417200}
   m_Layer: 0
   m_Name: Simple_T_Shirts_C
   m_TagString: Untagged
@@ -2338,6 +2339,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2844691226278417200
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844691226278417199}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.587626, y: 0.37748304, z: 0.5810476}
+  m_Center: {x: 0.0079940995, y: 0.05500598, z: 1.2185215}
 --- !u!1 &2899573029346530469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,7 +4061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2844691226278417199}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 543450652508645930}
