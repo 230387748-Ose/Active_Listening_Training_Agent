@@ -6,9 +6,9 @@ using Microsoft.MixedReality.Toolkit;
 
 public class EyeTracking : MonoBehaviour
 {
-     public GameObject headObject;  // GameObject with CapsuleCollider for the head
+    public GameObject headObject;  // GameObject with CapsuleCollider for the head
     public GameObject bodyObject;  // GameObject with MeshCollider for the body
-    public float recordInterval = 5.0f; // Time interval in seconds for recording data
+    public float recordInterval = 0.02f; // Time interval in seconds for recording data (20 milliseconds)
 
     private IMixedRealityEyeGazeProvider eyeGazeProvider;
     private string gazeStatus = "Not looking at character"; // Default gaze status
@@ -86,7 +86,14 @@ public class EyeTracking : MonoBehaviour
 
     void LogGazeData()
     {
-        Debug.Log($"Time: {Time.time}, Gaze Status: {gazeStatus}");
+        string[] header = { "Time", "Gaze Status" };
+        string[] data = { Time.time.ToString("F4"), gazeStatus };
+        
+        // Log to LogManager
+        LogManager.instance.WriteCSV(header, new List<string[]> { data });
+
+        // Log to console
+        Debug.Log($"Time: {Time.time:F4}, Gaze Status: {gazeStatus}");
     }
 
     void OnDisable()

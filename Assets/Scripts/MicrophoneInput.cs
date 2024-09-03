@@ -5,7 +5,7 @@ using UnityEngine;
 public class MicrophoneInput : MonoBehaviour
 {
     public float detectionThreshold = 0.1f;  // Adjust this threshold based on your needs
-    public float updateInterval = 0.1f;     // How often to check for spikes
+    public float updateInterval = 0.1f;      // How often to check for spikes
 
     private AudioSource audioSource;
     private float[] audioSamples;
@@ -67,7 +67,7 @@ public class MicrophoneInput : MonoBehaviour
         {
             if (Mathf.Abs(sample) > detectionThreshold)
             {
-                LogInterruption();
+                LogInterruption();  // <--- Changed: Calls LogInterruption method
                 break;
             }
         }
@@ -77,6 +77,15 @@ public class MicrophoneInput : MonoBehaviour
     void LogInterruption()
     {
         Debug.Log($"Volume spike detected at: {System.DateTime.Now}");
+
+        // Ensure LogManager is present and enabled
+        if (LogManager.instance != null && LogManager.instance.isActiveAndEnabled)  // <--- Changed: Check if LogManager exists and is enabled
+        {
+            string[] headers = { "Timestamp", "Event", "Details" };  // <--- Changed: Prepare headers
+            string[] data = { System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), "VolumeSpike", "Volume spike detected" };  // <--- Changed: Prepare data
+
+            LogManager.instance.WriteCSV(headers, new List<string[]> { data });  // <--- Changed: Log data using LogManager
+        }
     }
 
     // Called when the application is quitting or the object is destroyed

@@ -230,7 +230,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 1
   Mute: 1
-  Spatialize: 0
+  Spatialize: 1
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
@@ -8924,7 +8924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   headObject: {fileID: 5277312465423724276}
   bodyObject: {fileID: 3626925275037586992}
-  recordInterval: 5
+  recordInterval: 0.02
 --- !u!114 &5277312465423724281
 MonoBehaviour:
   m_ObjectHideFlags: 0
