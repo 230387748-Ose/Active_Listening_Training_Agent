@@ -26,27 +26,13 @@ public class Animation2Controller : MonoBehaviour
 
             // Start syncing animations with audio
             StartCoroutine(SyncAnimationsWithAudio());
-
-
-        // Schedule animations based on the audio timing
-        // Invoke("TriggerWaveAnimation", 0f);  // Trigger wave after 2 seconds
-        // Invoke("TriggerTalkingAnimation", 2f);  // Trigger talking after 5 seconds
-        // Invoke("TriggerTalkingAnimation", 7f);
-        // Invoke("TriggerSurprisedAnimation", 10f);
-        // // Invoke("TriggerLaughAnimation", 15f);
-        // Invoke("TriggerHeadShakeAnimation", 20f);
-        // Invoke("TriggerLaughAnimation", 30f);
-        // Invoke("TriggerLookAnimation", 55f);
-        // Invoke("TriggerVictoryAnimation", 60f);
-        // Invoke("TriggerLaughAnimation", 70f);
-        // Invoke("TriggerHeadShakeAnimation", 80f);
-        // Invoke("TriggerThankfulAnimation", 270f);
         }
         else
         {
             Debug.LogError("SALSA component is not assigned!");
         }
-
+          // Start in idle animation
+        animator.SetBool("isIdle", true);
     }
 
      IEnumerator SyncAnimationsWithAudio()
@@ -55,71 +41,84 @@ public class Animation2Controller : MonoBehaviour
         yield return new WaitUntil(() => salsa.audioSrc.time >= 0f);
         TriggerWaveAnimation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 2f);
-        TriggerTalkingAnimation();
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 4f);
+        TriggerTalking2Animation();
 
         yield return new WaitUntil(() => salsa.audioSrc.time >= 7f);
         TriggerTalkingAnimation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 10f);
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 12f);
         TriggerSurprisedAnimation();
-
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 15f);
-        TriggerLaughAnimation();
 
         yield return new WaitUntil(() => salsa.audioSrc.time >= 20f);
         TriggerHeadShakeAnimation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 30f);
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 24f);
         TriggerLaughAnimation();
 
         yield return new WaitUntil(() => salsa.audioSrc.time >= 50f);
         TriggerLookAnimation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 59f);
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 63f);
         TriggerVictoryAnimation();
         
         yield return new WaitUntil(() => salsa.audioSrc.time >= 66f);
-        TriggerTalkingAnimation();
+        TriggerTalking2Animation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 80f);
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 78f);
         TriggerLaughAnimation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 85f);
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 90f);
         TriggerThankfulAnimation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 106f);
-        TriggerLookAnimation();
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 108f);
+        TriggerNLookingAnimation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 120f);
-        TriggerTalkingAnimation();
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 121f);
+        TriggerTalking2Animation();
         
         //tc0
         yield return new WaitUntil(() => salsa.audioSrc.time >= 126f);
         TriggerVictoryAnimation();
 
+        // talking for puncho 
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 145f);
+        TriggerTalkingAnimation();
+
         //tc1
         yield return new WaitUntil(() => salsa.audioSrc.time >= 160f);
-        TriggerTalkingAnimation();
+        TriggerTalking2Animation();
 
         yield return new WaitUntil(() => salsa.audioSrc.time >= 177f);
         TriggerHeadShakeAnimation();
 
         //tc2
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 185f);
-        TriggerTalkingAnimation();
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 186f);
+        TriggerTalking2Animation();
+
+        // reacting 
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 193f);
+        TriggerReactAnimation();
 
         //tc3
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 197f);
-        TriggerTalkingAnimation();
+        // yield return new WaitUntil(() => salsa.audioSrc.time >= 198f);
+        // TriggerTalking2Animation();
+
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 198f);
+        TriggerLNodingAnimation();
+        
 
         //tc4
         yield return new WaitUntil(() => salsa.audioSrc.time >= 208f);
         TriggerListenAnimation();
 
         //tc5
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 220f);
-        TriggerHeadShakeAnimation();
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 221f);
+        TriggerNodingAnimation();
+
+        // shrug
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 228f);
+        TriggerVictoryAnimation();
 
         //tc6
         yield return new WaitUntil(() => salsa.audioSrc.time >= 237f);
@@ -127,67 +126,148 @@ public class Animation2Controller : MonoBehaviour
 
         //tc7
         yield return new WaitUntil(() => salsa.audioSrc.time >= 267f);
-        TriggerTalkingAnimation();
+        TriggerTalking2Animation();
 
         //tc5
         yield return new WaitUntil(() => salsa.audioSrc.time >= 270f);
         TriggerLookAnimation();
 
+        //tc5
         yield return new WaitUntil(() => salsa.audioSrc.time >= 275f);
-        TriggerThankfulAnimation();
+        TriggerLNodingAnimation();
+
+        // yield return new WaitUntil(() => salsa.audioSrc.time >= 281f);
+        // TriggerThankfulAnimation();
+
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 281f);
+        TriggerWaveAnimation();
     }
 
     
-     void TriggerWaveAnimation()
+ void ResetAllBooleans()
     {
-        // salsa.AudioSource.PlayOneShot(waveClip);
-        animator.SetTrigger("WaveTrigger");  // This triggers the talking animation
+        animator.SetBool("isIdle", false);
+        animator.SetBool("isWaving", false);
+        animator.SetBool("isTalking", false);
+        animator.SetBool("isShrugging", false);
+        animator.SetBool("isSurprised", false);
+        animator.SetBool("isHeadShaking", false);
+        animator.SetBool("isLaughing", false);
+        animator.SetBool("isReacting", false);
+        animator.SetBool("isThankful", false);
+        animator.SetBool("isLooking", false);
+        animator.SetBool("isListening", false);
+        animator.SetBool("isTalking2", false);
+        animator.SetBool("isNLooking", false);
+        animator.SetBool("isNoding", false);
+        animator.SetBool("isLNoding", false);
+    }
+
+    void TriggerWaveAnimation()
+    {
+        ResetAllBooleans();
+        animator.SetBool("isWaving", true);
+        Invoke("SetIdleState", 2f);
     }
 
     void TriggerTalkingAnimation()
     {
-        animator.SetTrigger("TalkTrigger");  // This triggers the talking animation
+        ResetAllBooleans();
+        animator.SetBool("isTalking", true);
+        Invoke("SetIdleState", 2f);
     }
 
-     void TriggerVictoryAnimation()
+    void TriggerVictoryAnimation()
     {
-        animator.SetTrigger("VictoryTrigger");  // This triggers the talking animation
+        ResetAllBooleans();
+        animator.SetBool("isShrugging", true);
+        Invoke("SetIdleState", 2f);
     }
 
-     void TriggerSurprisedAnimation()
+    void TriggerSurprisedAnimation()
     {
-        animator.SetTrigger("SurprisedTrigger");  // This triggers the talking animation
+        ResetAllBooleans();
+        animator.SetBool("isSurprised", true);
+        Invoke("SetIdleState", 4f);
     }
 
-     void TriggerHeadShakeAnimation()
+    void TriggerHeadShakeAnimation()
     {
-        animator.SetTrigger("HeadShakeTrigger");  // This triggers the talking animation
+        ResetAllBooleans();
+        animator.SetBool("isHeadShaking", true);
+        Invoke("SetIdleState", 2f);
     }
 
-     void TriggerLaughAnimation()
+    void TriggerLaughAnimation()
     {
-        animator.SetTrigger("LaughTrigger");  // This triggers the talking animation
+        ResetAllBooleans();
+        animator.SetBool("isLaughing", true);
+        Invoke("SetIdleState", 6f);
     }
 
-     void TriggerReactAnimation()
+    void TriggerReactAnimation()
     {
-        animator.SetTrigger("ReactTrigger");  // This triggers the talking animation
+        ResetAllBooleans();
+        animator.SetBool("isReacting", true);
+        Invoke("SetIdleState", 3f);
     }
 
-     void TriggerLookAnimation()
+    void TriggerLookAnimation()
     {
-        animator.SetTrigger("LookTrigger");  // This triggers the talking animation
+        ResetAllBooleans();
+        animator.SetBool("isLooking", true);
+        Invoke("SetIdleState", 4f);
     }
 
+    void TriggerListenAnimation()
+    {
+        ResetAllBooleans();
+        animator.SetBool("isListening", true);
+        Invoke("SetIdleState", 4f);
+    }
+
+    void TriggerThankfulAnimation()
+    {
+        ResetAllBooleans();
+        animator.SetBool("isThankful", true);
+        Invoke("SetIdleState", 3f);
+    }
+
+    // Talk2Trigger
+    void TriggerTalking2Animation()
+    {
+        ResetAllBooleans();
+        animator.SetBool("isTalking2", true);
+        Invoke("SetIdleState", 2f);
+    }
+
+    // NlookTrigger
+    void TriggerNLookingAnimation()
+    {
+        ResetAllBooleans();
+        animator.SetBool("isNLooking", true);
+        Invoke("SetIdleState", 3f);
+    }
+    // NodTrigger
+    void TriggerNodingAnimation()
+    {
+        ResetAllBooleans();
+        animator.SetBool("isNoding", true);
+        Invoke("SetIdleState", 2f);
+    }
+    // LNodTrigger
+    void TriggerLNodingAnimation()
+    {
+        ResetAllBooleans();
+        animator.SetBool("isLNoding", true);
+        Invoke("SetIdleState", 3f);
+    }
+
+
+    void SetIdleState()
+    {
+        ResetAllBooleans();
+        animator.SetBool("isIdle", true);
+    }
     
-     void TriggerListenAnimation()
-    {
-        animator.SetTrigger("ListeningTrigger");  // This triggers the talking animation
-    }
-
-
-     void TriggerThankfulAnimation()
-    {
-        animator.SetTrigger("ThankfulTrigger");  // This triggers the talking animation
-    }
 }
