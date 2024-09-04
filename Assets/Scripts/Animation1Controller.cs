@@ -28,13 +28,16 @@ public class Animation1Controller : MonoBehaviour
         {
             Debug.LogError("SALSA component is not assigned!");
         }
+
+        // Start in idle animation
+        animator.SetBool("isIdle", true);
     }
 
      IEnumerator SyncAnimationsWithAudio()
     {
         // Wait for specific times in the audio to trigger animations
-        // yield return new WaitUntil(() => salsa.audioSrc.time >= 0f);
-        // TriggerWaveAnimation();
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 0f);
+        TriggerWaveAnimation();
 
         yield return new WaitUntil(() => salsa.audioSrc.time >= 2f);
         TriggerTalkingAnimation();
@@ -43,14 +46,43 @@ public class Animation1Controller : MonoBehaviour
         TriggerWaveAnimation();
     }
 
-      void TriggerWaveAnimation()
+    //   void TriggerWaveAnimation()
+    // {
+    //     // salsa.AudioSource.PlayOneShot(waveClip);
+    //     animator.SetTrigger("WaveTrigger");  // This triggers the talking animation
+    // }
+
+    // void TriggerTalkingAnimation()
+    // {
+    //     animator.SetTrigger("TalkTrigger");  // This triggers the talking animation
+    // }
+     void TriggerWaveAnimation()
     {
-        // salsa.AudioSource.PlayOneShot(waveClip);
-        animator.SetTrigger("WaveTrigger");  // This triggers the talking animation
+        animator.SetBool("isWaving", true);
+        animator.SetBool("isIdle", false);
+
+        // Stop waving after 2 seconds
+        Invoke("StopWaveAnimation", 2f);
+    }
+
+    void StopWaveAnimation()
+    {
+        animator.SetBool("isWaving", false);
+        animator.SetBool("isIdle", true);
     }
 
     void TriggerTalkingAnimation()
     {
-        animator.SetTrigger("TalkTrigger");  // This triggers the talking animation
+        animator.SetBool("isTalking", true);
+        animator.SetBool("isIdle", false);
+
+        // Stop talking after 3 seconds
+        Invoke("StopTalkingAnimation", 3f);
+    }
+
+    void StopTalkingAnimation()
+    {
+        animator.SetBool("isTalking", false);
+        animator.SetBool("isIdle", true);
     }
 }
