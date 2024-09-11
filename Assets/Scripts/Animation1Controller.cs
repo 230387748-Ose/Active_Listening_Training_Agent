@@ -42,7 +42,7 @@ public class Animation1Controller : MonoBehaviour
         yield return new WaitUntil(() => salsa.audioSrc.time >= 2f);
         TriggerTalkingAnimation();
 
-        yield return new WaitUntil(() => salsa.audioSrc.time >= 285f);
+        yield return new WaitUntil(() => salsa.audioSrc.time >= 296f);
         TriggerWaveAnimation();
     }
 
@@ -62,7 +62,7 @@ public class Animation1Controller : MonoBehaviour
         animator.SetBool("isIdle", false);
 
         // Stop waving after 2 seconds
-        Invoke("StopWaveAnimation", 2f);
+        Invoke("StopWaveAnimation", 3f);
     }
 
     void StopWaveAnimation()
