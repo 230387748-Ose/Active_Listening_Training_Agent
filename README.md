@@ -118,11 +118,10 @@ Key Insights:
 Higher focus percentages were generally associated with higher recall scores.
 Other factors, such as topic familiarity and interest, also influenced performance.
 
-
-
-For more details, Download Full Dissertation [Active Listening Training Agent.pdf](https://github.com/230387748-Ose/Active_Listening_Training_Agent/blob/00279113fc4366c993caf40e5abf73426a0d25fc/Active%20Listening%20Training%20Agent.pdf).
-
 ```
+For more details, View Full Dissertation [Active Listening Training Agent.pdf](https://github.com/230387748-Ose/Active_Listening_Training_Agent/blob/00279113fc4366c993caf40e5abf73426a0d25fc/Active%20Listening%20Training%20Agent.pdf).
+
+
 ## Future Enhancements
 - Adding more diverse virtual agents.
 - Implementing AI-driven adaptive feedback mechanisms.
