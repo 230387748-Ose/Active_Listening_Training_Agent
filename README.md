@@ -1,7 +1,8 @@
 # Active Listening Training Agent
 An Augmented Reality system developed using Unity and HoloLens 2, designed to enhance communication skills by providing real-time feedback on active listening behaviors, particularly in scenarios involving interactions with individuals of diverse affective states.
 
-![Demo](path-to-your-gif-or-image.gif)
+## Demo Video
+![Watch the Demo](media/Untitled-2025-01-03164409copy-ezgif.com-optimize.gif)
 
 [![Unity](https://img.shields.io/badge/Unity-v2024-blue)](https://unity.com)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
